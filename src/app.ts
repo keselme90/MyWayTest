@@ -16,4 +16,4 @@ mongoose.connect(
 
 app.use(express.json());
 app.use(routes);
-app.listen(5000, () => console.log('Server running'));
+app.listen(process.env.PORT || 5000, () => console.log('Server running'));
