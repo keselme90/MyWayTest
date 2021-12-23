@@ -1,0 +1,22 @@
+{
+  "name": "TestingServer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "tsc",
+    "start": "node backend/dist/app.js"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keselme90/MyWayTest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keselme90/MyWayTest/issues"
+  },
+  "homepage": "https://github.com/keselme90/MyWayTest#readme"
+}
