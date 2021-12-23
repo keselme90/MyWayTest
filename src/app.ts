@@ -5,7 +5,6 @@ import bodyParser from "body-parser";
 import routes from './routes';
 
 const connectionString = process.env.DB_CONNECTION || '';
-console.log('connection string', connectionString);
 
 const app:Application = express();
 
