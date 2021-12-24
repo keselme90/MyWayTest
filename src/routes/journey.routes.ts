@@ -10,7 +10,7 @@ journeyRouter.get('/', (request, response) => {
     })
     .catch((e:any)=>{
         console.log(e);
-        response.send(`failed with error ${JSON.stringify(e)}`);
+        response.send(`failed with error ${e}`);
     });
 });
 
