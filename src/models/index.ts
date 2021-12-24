@@ -1,2 +1,3 @@
 import Journey from "./Journey";
-export  default Journey;
+import Error from "./Error";
+export  { Journey, Error };
