@@ -1,6 +1,10 @@
 import mongoose from 'mongoose';
 
 const JourneySchema =  new mongoose.Schema({
+    journeyId: {
+        type: String,
+        required: true,
+    },
     eventName: {
         type: String,
         required: true
@@ -9,11 +13,11 @@ const JourneySchema =  new mongoose.Schema({
         type: String,
         required: true
     },
-    fCarId: {
+    fDriverId: {
         type: String,
         required: true
     },
-    fDriverId: {
+    fCarId: {
         type: String,
         required: true
     },
@@ -21,8 +25,16 @@ const JourneySchema =  new mongoose.Schema({
         type: String,
         required: true
     },
+    btName: {
+        type: String,
+        required: String
+    },
     device: {
         type: String,
+        required: true
+    },
+    hasUserCompletedOnBoarding: {
+        type: Boolean,
         required: true
     },
     time: {
