@@ -13,3 +13,5 @@ errorRouter.get('/', (reqeust, response) => {
         response.send(`failed with error ${e}`)
     })
 })
+
+export default errorRouter;
