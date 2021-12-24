@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import journeyRouter from './journey.routes';
+import errorRouter from './error.routes';
 
 const routes = Router();
 
@@ -8,5 +9,6 @@ routes.get('/', (request, response) => {
 });
 
 routes.use('/journeys', journeyRouter);
+routes.use('/errors', errorRouter);
 
 export default routes;
