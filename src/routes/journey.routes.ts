@@ -18,11 +18,11 @@ journeyRouter.post('/', (request, response) => {
     const journey = new Journey({
         journeyId: request.body.journeyId,
         eventName: request.body.eventName,
-        fPolicyId: request.body.fPolicyId,
-        fDriverId: request.body.fDriverId,
-        fCarId: request.body.fCarId,
-        btUUID: request.body.btUUID,
-        btName: request.body.btName,
+        fPolicyId: request.body.fPolicyId || '0',
+        fDriverId: request.body.fDriverId || '0',
+        fCarId: request.body.fCarId || '0',
+        btUUID: request.body.btUUID || '0',
+        btName: request.body.btName || 'default',
         device: request.body.device,
         hasUserCompletedOnBoarding: request.body.hasUserCompletedOnBoarding,
         time: request.body.time
