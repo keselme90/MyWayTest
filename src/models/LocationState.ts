@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const LocationSateSchema =  new mongoose.Schema({
+const LocationStateSchema =  new mongoose.Schema({
     locationState: {
         type: String,
         required: true,
@@ -12,4 +12,4 @@ const LocationSateSchema =  new mongoose.Schema({
 });
 
 
-export default mongoose.model('LocationSate', LocationSateSchema);
+export default mongoose.model('LocationState', LocationStateSchema);
