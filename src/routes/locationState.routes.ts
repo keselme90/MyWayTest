@@ -4,7 +4,7 @@ import { LocationState, Error } from '../models';
 const locationStateRouter = Router();
 
 locationStateRouter.get('/', (request, response) => {
-    locationState.find()
+    LocationState.find()
     .then((data:any) => {
         response.json(data)
     })
