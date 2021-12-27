@@ -37,4 +37,4 @@ locationStateRouter.post('/', (request, response) => {
     })
 });
 
-export default bluetoothConnectionRouter;
+export default locationStateRouter;
