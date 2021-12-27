@@ -12,5 +12,4 @@ const LocationSateSchema =  new mongoose.Schema({
 });
 
 
-
 export default mongoose.model('LocationSate', LocationSateSchema);
