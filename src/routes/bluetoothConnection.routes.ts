@@ -19,7 +19,7 @@ bluetoothConnectionRouter.post('/', (request, response) => {
         connectionState: request.body.connectionState,
         btUUID: request.body.btUUID,
         btName: request.body.btName || '0',
-        date: request.body.date || '0',
+        date: request.body.date,
     });
     bluetoothConnection.save()
     .then((data:any) => response.json(data))
