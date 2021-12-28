@@ -1,33 +1,17 @@
 import mongoose from 'mongoose';
 
 const JourneySchema =  new mongoose.Schema({
-    journeyId: {
-        type: String,
-        required: true,
-    },
     eventName: {
         type: String,
         required: true
     },
-    fPolicyId: {
+    theFloJourneyId: {
+        type: String,
+        required: true,
+    },
+    theFloCarId: {
         type: String,
         required: true
-    },
-    fDriverId: {
-        type: String,
-        required: true
-    },
-    fCarId: {
-        type: String,
-        required: true
-    },
-    btUUID: {
-        type: String,
-        required: true
-    },
-    btName: {
-        type: String,
-        required: String
     },
     device: {
         type: String,
@@ -37,10 +21,22 @@ const JourneySchema =  new mongoose.Schema({
         type: Boolean,
         required: true
     },
+    btUUID: {
+        type: String,
+        default: '00:00:00:00:00'
+    },
+    btName: {
+        type: String,
+        default: 'Unknown'
+    },
+    btTheFloVehicleId: {
+        type: String,
+        default: 'Unknown'
+    },
     time: {
         type: Date,
         default: new Date()
-    }
+    },
 });
 
 export default mongoose.model('Journeys', JourneySchema);

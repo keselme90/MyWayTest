@@ -15,17 +15,26 @@ journeyRouter.get('/', (request, response) => {
 });
 
 journeyRouter.post('/', (request, response) => {
+    const {
+        eventName,
+        theFloJourneyId,
+        theFloCarId,
+        device,
+        hasUserCompletedOnBoarding,
+        btUUID,
+        btName,
+        btTheFloVehicleId,
+        time } = request.body
     const journey = new Journey({
-        journeyId: request.body.journeyId,
-        eventName: request.body.eventName,
-        fPolicyId: request.body.fPolicyId || '0',
-        fDriverId: request.body.fDriverId || '0',
-        fCarId: request.body.fCarId || '0',
-        btUUID: request.body.btUUID || '0',
-        btName: request.body.btName || 'default',
-        device: request.body.device,
-        hasUserCompletedOnBoarding: request.body.hasUserCompletedOnBoarding,
-        time: request.body.time
+        eventName,
+        theFloJourneyId,
+        theFloCarId,
+        device,
+        hasUserCompletedOnBoarding,
+        btUUID,
+        btName,
+        btTheFloVehicleId,
+        time
     });
     journey.save()
     .then((data:any) => response.json(data))
