@@ -17,6 +17,10 @@ const JourneySchema =  new mongoose.Schema({
         type: String,
         required: true
     },
+    batteryLevel: {
+        type: Number,
+        required: true
+    },
     hasUserCompletedOnBoarding: {
         type: Boolean,
         required: true
