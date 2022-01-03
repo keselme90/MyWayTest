@@ -25,6 +25,7 @@ journeyRouter.post('/', (request, response) => {
         btUUID,
         btName,
         btTheFloVehicleId,
+        version,
         time } = request.body
     const journey = new Journey({
         eventName,
@@ -36,6 +37,7 @@ journeyRouter.post('/', (request, response) => {
         btUUID,
         btName,
         btTheFloVehicleId,
+        version,
         time
     });
     journey.save()
