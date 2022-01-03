@@ -38,8 +38,8 @@ const JourneySchema =  new mongoose.Schema({
         default: 'Unknown'
     },
     version: {
-        type: Number,
-        default: 0
+        type: String,
+        default: '0.0'
     },
     time: {
         type: Date,
