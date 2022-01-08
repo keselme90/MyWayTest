@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { Request as Req, Error } from "../models";
+import { IncomingRequest as Req, Error } from "../models";
 
 const reqeustRouter = Router();
 

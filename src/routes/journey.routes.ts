@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { Journey, Error, Request as Req } from '../models';
+import { Journey, Error, IncomingRequest as Req } from '../models';
 import { RequestType } from '../types';
 
 const journeyRouter = Router();
@@ -59,13 +59,13 @@ journeyRouter.post('/', (request, response) => {
     })
     .finally(() =>  {
         const req = new Req({
-            requestType: RequestType.DRIVING_EVENT,
-            request,
+            requestType: 'DRIVING_EVENT',
+            incomingRequest: JSON.stringify(request.body),
             time: new Date()
         });
         req.save()
         .then((data:any) => {
-            response.send('Reqeust added successfully')
+            // response.send('Reqeust added successfully')
         })
         .catch((e:any) => {
             const error = new Error({
@@ -74,11 +74,11 @@ journeyRouter.post('/', (request, response) => {
             });
             error.save()
             .then((data:any) => {
-                response.send(`Error logged successfully for reqeust`);
+                // response.send(`Error logged successfully for reqeust`);
             })
             .catch((e:any) => {
                 console.log(e);
-                response.send(`failed with error ${JSON.stringify(e)}`)
+                // response.send(`failed with error ${JSON.stringify(e)}`)
             });
         })
     })
