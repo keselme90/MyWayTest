@@ -37,6 +37,10 @@ const JourneySchema =  new mongoose.Schema({
         type: String,
         default: 'Unknown'
     },
+    version: {
+        type: String,
+        default: '0.0'
+    },
     time: {
         type: Date,
         default: new Date()
