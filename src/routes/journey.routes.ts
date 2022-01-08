@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import { Journey, Error } from '../models';
+import { Journey, Error, Request as Req } from '../models';
+import { RequestType } from '../types';
 
 const journeyRouter = Router();
 
@@ -25,7 +26,8 @@ journeyRouter.post('/', (request, response) => {
         btUUID,
         btName,
         btTheFloVehicleId,
-        time } = request.body
+        time
+    } = request.body
     const journey = new Journey({
         eventName,
         theFloJourneyId,
@@ -53,6 +55,31 @@ journeyRouter.post('/', (request, response) => {
             console.log(e);
             response.send(`failed with error ${JSON.stringify(e)}`)
         });
+    })
+    .finally(() =>  {
+        const req = new Req({
+            requestType: RequestType.DRIVING_EVENT,
+            request,
+            time: new Date()
+        });
+        req.save()
+        .then((data:any) => {
+            response.send('Reqeust added successfully')
+        })
+        .catch((e:any) => {
+            const error = new Error({
+                errorMessage: JSON.stringify(`failed to add reqeust with error: ${e}`),
+                time: new Date()
+            });
+            error.save()
+            .then((data:any) => {
+                response.send(`Error logged successfully for reqeust`);
+            })
+            .catch((e:any) => {
+                console.log(e);
+                response.send(`failed with error ${JSON.stringify(e)}`)
+            });
+        })
     })
 });
 
