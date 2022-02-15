@@ -17,31 +17,46 @@ journeyRouter.get('/', (request, response) => {
 
 journeyRouter.post('/', (request, response) => {
     const {
+        time,
         eventName,
         theFloJourneyId,
         theFloCarId,
-        device,
-        batteryLevel,
-        hasUserCompletedOnBoarding,
+        btTheFloVehicleId,
         btUUID,
         btName,
-        btTheFloVehicleId,
-        version,
+        hasUserCompletedOnBoarding,
+        appVersion,
+        buildVersion,
+        manufacturer,
+        deviceBrand,
+        deviceName,
         osVersion,
-        time } = request.body
+        isBluetoothOn,
+        isLocationEnabled,
+        batteryLevel,
+        isBatteryCharging,
+        isEmulator
+    } = request.body
     const journey = new Journey({
+        time,
         eventName,
         theFloJourneyId,
         theFloCarId,
-        device,
-        batteryLevel,
-        hasUserCompletedOnBoarding,
+        btTheFloVehicleId,
         btUUID,
         btName,
-        btTheFloVehicleId,
-        version,
+        hasUserCompletedOnBoarding,
+        appVersion,
+        buildVersion,
+        manufacturer,
+        deviceBrand,
+        deviceName,
         osVersion,
-        time
+        isBluetoothOn,
+        isLocationEnabled,
+        batteryLevel,
+        isBatteryCharging,
+        isEmulator
     });
     journey.save()
     .then((data:any) => response.json(data))

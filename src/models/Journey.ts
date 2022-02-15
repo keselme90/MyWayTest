@@ -1,29 +1,25 @@
 import mongoose from 'mongoose';
 
 const JourneySchema =  new mongoose.Schema({
+    time: {
+        type: Date,
+        default: new Date()
+    },
     eventName: {
         type: String,
-        required: true
+        default: 'Unknown'
     },
     theFloJourneyId: {
         type: String,
-        required: true,
+        default: 'Unknown',
     },
     theFloCarId: {
         type: String,
-        required: true
+        default: 'Unknown'
     },
-    device: {
+    btTheFloVehicleId: {
         type: String,
-        required: true
-    },
-    batteryLevel: {
-        type: Number,
-        required: true
-    },
-    hasUserCompletedOnBoarding: {
-        type: Boolean,
-        required: true
+        default: 'Unknown'
     },
     btUUID: {
         type: String,
@@ -33,22 +29,54 @@ const JourneySchema =  new mongoose.Schema({
         type: String,
         default: 'Unknown'
     },
-    btTheFloVehicleId: {
+    hasUserCompletedOnBoarding: {
+        type: Boolean,
+        default: false
+    },
+    appVersion: {
+        type: String,
+        default: '0.0'
+    },
+    buildVersion: {
+        type: String,
+        default: '0.0'
+    },
+    manufacturer: {
         type: String,
         default: 'Unknown'
     },
-    version: {
+    deviceBrand: {
+        tpye: String,
+        default: 'Unknown'
+    },
+    deviceName: {
         type: String,
-        default: '0.0'
+        default: 'Unknown'
     },
     osVersion: {
         type: String,
         default: '0.0'
     },
-    time: {
-        type: Date,
-        default: new Date()
+    isBluetoothOn: {
+        type: Boolean,
+        default: false
     },
+    isLocationEnabled: {
+        type: Boolean,
+        default: false
+    },
+    batteryLevel: {
+        type: Number,
+        default: -1
+    },
+    isBatteryCharging: {
+        type: Boolean,
+        default: false
+    },
+    isEmulator: {
+        type: Boolean,
+        default: false
+    }
 });
 
 export default mongoose.model('Journeys', JourneySchema);
