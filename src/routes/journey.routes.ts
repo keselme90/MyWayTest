@@ -7,7 +7,7 @@ const journeyRouter = Router();
 journeyRouter.get('/', (request, response) => {
     Journey.find()
     .then((data:any) => {
-        response.json(data)
+        response.json(data.reverse())
     })
     .catch((e:any)=>{
         console.log(e);
