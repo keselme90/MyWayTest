@@ -49,6 +49,14 @@ const JourneySchema =  new mongoose.Schema({
         type: String,
         default: 'Unknown'
     },
+    deviceId: {
+        type: String,
+        default: 'Unknown'
+    },
+    deviceModel: {
+        type: String,
+        default: 'Unknown'
+    },
     deviceName: {
         type: String,
         default: 'Unknown'
