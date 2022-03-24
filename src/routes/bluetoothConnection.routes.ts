@@ -6,7 +6,7 @@ const bluetoothConnectionRouter = Router();
 bluetoothConnectionRouter.get('/', (request, response) => {
     BluetoothConnection.find()
     .then((data:any) => {
-        response.json(data)
+        response.json(data.reverse())
     })
     .catch((e:any)=>{
         console.log(e);
