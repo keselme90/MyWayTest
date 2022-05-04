@@ -45,7 +45,7 @@ bluetoothPairingRouter.post('/', (request, response) => {
     bluetoothPairing.save()
     .then((data:any) => response.json(data))
     .catch ((e:any) => {
-       response.send(`Failed with error ${JSON.stringify(e)}`)
+       response.send(`failed with error ${JSON.stringify(e)}`)
     })
 });
 
