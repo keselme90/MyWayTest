@@ -5,14 +5,6 @@ const BluetoothPairing =  new mongoose.Schema({
         type: Date,
         default: new Date()
     },
-    brand: {
-        type: String,
-        default: '',
-    },
-    licence: {
-        type: String,
-        default: ''
-    },
     btUUID: {
       type: String,
       default: ''
@@ -21,9 +13,37 @@ const BluetoothPairing =  new mongoose.Schema({
       type: String,
       default: ''
     },
-    sentFrom: {
-      type: String,
-      default: ''
+    vehicleName: {
+        type: String,
+        default: ''
+    },
+    vehicleNumber: {
+        type: String,
+        default: ''
+    },
+    appVersion: {
+        type: String,
+        default: '0.0'
+    },
+    buildVersion: {
+        type: String,
+        default: '0.0'
+    },
+    manufacturer: {
+        type: String,
+        default: 'Unknown'
+    },
+    deviceBrand: {
+        type: String,
+        default: 'Unknown'
+    },
+    deviceName: {
+        type: String,
+        default: 'Unknown'
+    },
+    osVersion: {
+        type: String,
+        default: '0.0'
     }
 });
 
