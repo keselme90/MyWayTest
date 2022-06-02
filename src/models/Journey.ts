@@ -38,7 +38,7 @@ const JourneySchema =  new mongoose.Schema({
         default: new Date()
     },
     keepAliveTrueCounter: {
-        type: number,
+        type: Number,
         default: -1
     },
     keepAliveFalseTimestamp: {
