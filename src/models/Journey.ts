@@ -33,6 +33,18 @@ const JourneySchema =  new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    keepAliveTrueTimestamp: {
+        type: Date,
+        default: new Date()
+    },
+    keepAliveTrueCounter: {
+        type: number,
+        default: -1
+    },
+    keepAliveFalseTimestamp: {
+        type: Date,
+        default: new Date()
+    },
     appVersion: {
         type: String,
         default: '0.0'
