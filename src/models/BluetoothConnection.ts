@@ -1,6 +1,10 @@
 import mongoose from 'mongoose';
 
 const BluetoothConnectionSchema =  new mongoose.Schema({
+    journeyId: {
+      type: String,
+      default: undefined
+    },
     connectionState: {
         type: String,
         required: true,
