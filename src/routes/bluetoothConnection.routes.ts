@@ -16,6 +16,7 @@ bluetoothConnectionRouter.get('/', (request, response) => {
 
 bluetoothConnectionRouter.post('/', (request, response) => {
     const bluetoothConnection = new BluetoothConnection({
+        journeyId: request.body.journeyId,
         connectionState: request.body.connectionState,
         btUUID: request.body.btUUID,
         btName: request.body.btName || '0',
