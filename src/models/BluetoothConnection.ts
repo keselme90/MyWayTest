@@ -7,19 +7,23 @@ const BluetoothConnectionSchema =  new mongoose.Schema({
     },
     connectionState: {
         type: String,
-        required: true,
+        default: undefined,
+    },
+    connectionStateTimestamp: {
+        type: Date,
+        default: undefined
     },
     btUUID: {
         type: String,
-        required: true
+        default: undefined
     },
     btName: {
       type: String,
-      required: true
+      default: undefined
     },
-    date: {
+    reportTimetstamp: {
         type: Date,
-        default: new Date()
+        default: undefined
     }
 });
 
