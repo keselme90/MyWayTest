@@ -18,9 +18,10 @@ bluetoothConnectionRouter.post('/', (request, response) => {
     const bluetoothConnection = new BluetoothConnection({
         journeyId: request.body.journeyId,
         connectionState: request.body.connectionState,
+        connectionStateTimestamp: request.body.connectionStateTimestamp,
         btUUID: request.body.btUUID,
-        btName: request.body.btName || '0',
-        date: request.body.date,
+        btName: request.body.btName,
+        reportTimestamp: request.body.reportTimestamp,
     });
     bluetoothConnection.save()
     .then((data:any) => response.json(data))
