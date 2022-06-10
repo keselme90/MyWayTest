@@ -3,7 +3,7 @@ import journeyRouter from './journey.routes';
 import errorRouter from './error.routes';
 import locationStateRouter from './locationState.routes';
 import bluetoothConnectionRouter from './bluetoothConnection.routes';
-import bluetoothPairingRouter from './bluetoothPairing.routes
+import bluetoothPairingRouter from './bluetoothPairing.routes'
 import reqeustRouter from './request.routes';
 const routes = Router();
 

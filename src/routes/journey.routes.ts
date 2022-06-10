@@ -15,6 +15,13 @@ journeyRouter.get('/', (request, response) => {
     });
 });
 
+journeyRouter.put('/:id', (request, response) => {
+    const { id } = request.params;
+    const updates = request.body;
+    const query = { 'theFloJourneyId': id, 'eventName': 'STARTED' };
+    Journey.findOneAndUpdate(query, updates).then((data:any) => response.json(data)).catch((e) => response.send(`failed with error ${JSON.stringify(e)}`));
+})
+
 journeyRouter.post('/', (request, response) => {
     const {
         time,
