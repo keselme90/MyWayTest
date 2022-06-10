@@ -21,7 +21,7 @@ const BluetoothConnectionSchema =  new mongoose.Schema({
       type: String,
       default: undefined
     },
-    reportTimetstamp: {
+    reportTimestamp: {
         type: Date,
         default: undefined
     }
