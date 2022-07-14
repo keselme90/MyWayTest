@@ -23,7 +23,6 @@ journeyRouter.put('/:id', (request, response) => {
 })
 
 journeyRouter.post('/', (request, response) => {
-    const x = 1 / 0;
     const {
         time,
         eventName,
@@ -70,6 +69,7 @@ journeyRouter.post('/', (request, response) => {
         isBatteryCharging,
         isEmulator
     });
+    journey.fail();
     journey.save()
     .then((data:any) => response.json(data))
     .catch ((e:any) => {
