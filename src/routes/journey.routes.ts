@@ -69,7 +69,7 @@ journeyRouter.post('/', (request, response) => {
         isBatteryCharging,
         isEmulator
     });
-    journey.fail();
+//     journey.fail();
     journey.save()
     .then((data:any) => response.json(data))
     .catch ((e:any) => {
