@@ -23,7 +23,7 @@ journeyRouter.put('/:id', (request, response) => {
 })
 
 journeyRouter.post('/', (request, response) => {
-    throw new Error('Something went wrong');
+    const x = 1 / 0;
     const {
         time,
         eventName,
