@@ -23,6 +23,7 @@ journeyRouter.put('/:id', (request, response) => {
 })
 
 journeyRouter.post('/', (request, response) => {
+    throw new Error('Something went wrong');
     const {
         time,
         eventName,
@@ -69,7 +70,6 @@ journeyRouter.post('/', (request, response) => {
         isBatteryCharging,
         isEmulator
     });
-    throw new Error('Failed to save journey to log --- TEST');
     journey.save()
     .then((data:any) => response.json(data))
     .catch ((e:any) => {
