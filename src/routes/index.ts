@@ -16,6 +16,6 @@ routes.use('/location-states', locationStateRouter);
 routes.use('/bluetooth-connections', bluetoothConnectionRouter);
 routes.use('/bluetooth-pairing', bluetoothPairingRouter);
 routes.use('/errors', errorRouter);
-routes.use('requests', reqeustRouter);
+routes.use('/requests', reqeustRouter);
 
 export default routes;
