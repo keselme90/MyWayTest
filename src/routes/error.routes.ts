@@ -6,7 +6,7 @@ const errorRouter = Router();
 errorRouter.get('/', (reqeust, response) => {
     Error.find()
     .then((data:any) => {
-        response.json(data)
+        response.json(data.reverse())
     })
     .catch((e:any) => {
         console.log(e);
