@@ -16,7 +16,7 @@ errorRouter.get('/', (reqeust, response) => {
 
 errorRouter.post('/', (request, response) => {
     const error = new Error({
-            errorMessage: JSON.stringify(`An error has occured ${request.body.errorMessage}`),
+            errorMessage: request.body.errorMessage,
             time: new Date()
         });
      error.save()
