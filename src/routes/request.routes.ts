@@ -6,7 +6,7 @@ const reqeustRouter = Router();
 reqeustRouter.get('/', (reqeust, response) => {
     Req.find()
     .then((data:any) => {
-        response.json(data)
+        response.json(data.reverse())
     })
     .catch((e:any) => {
         console.log(e);
