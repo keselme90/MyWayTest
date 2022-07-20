@@ -41,7 +41,7 @@ errorRouter.post('/', (request, response) => {
         deviceModel,
         deviceName,
         osVersion,
-        batteryLevel
+        batteryLevel,
         time: new Date()
      });
      error.save()
