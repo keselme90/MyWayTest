@@ -15,12 +15,35 @@ errorRouter.get('/', (reqeust, response) => {
 });
 
 errorRouter.post('/', (request, response) => {
+        const {
+        journeyId,
+        sdkVehicleId,
+        errorMessage,   
+        appVersion,
+        buildVersion,
+        manufacturer,
+        deviceBrand,
+        deviceId,
+        deviceModel,
+        deviceName,
+        osVersion,
+        batteryLevel,
+    } = request.body
     const error = new Error({
-            journeyId: reqeust.body.journeyId,
-            sdkVehicleId: reqeust.body.sdkVehicleId,
-            errorMessage: request.body.errorMessage,
-            time: new Date()
-        });
+        journeyId,
+        sdkVehicleId,
+        errorMessage,   
+        appVersion,
+        buildVersion,
+        manufacturer,
+        deviceBrand,
+        deviceId,
+        deviceModel,
+        deviceName,
+        osVersion,
+        batteryLevel
+        time: new Date()
+     });
      error.save()
         .then((data:any) => {
             response.send(`Error logged successfully`);
