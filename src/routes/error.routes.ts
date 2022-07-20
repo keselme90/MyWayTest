@@ -16,6 +16,8 @@ errorRouter.get('/', (reqeust, response) => {
 
 errorRouter.post('/', (request, response) => {
     const error = new Error({
+            journeyId: reqeust.body.journeyId,
+            sdkVehicleId: reqeust.body.sdkVehicleId,
             errorMessage: request.body.errorMessage,
             time: new Date()
         });
