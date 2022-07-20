@@ -1,8 +1,14 @@
 import mongoose from 'mongoose';
 
 const ErrorSchema = new mongoose.Schema({
-    journeyId: String,
-    sdkVehicleId: String,
+    journeyId: {
+        type: String,
+        default: 'Unknown'
+    },
+    sdkVehicleId: {
+        type: String,
+        default: 'Unknown'
+    },
     errorMessage: String,
     time: Date,
     appVersion: {
