@@ -22,7 +22,7 @@ bluetoothConnectionRouter.post('/', (request, response) => {
         driverId: request.body.driverId,
         btUUID: request.body.btUUID,
         btName: request.body.btName,
-        timestamp: new Date(request.body.timestamp).toLocaleTimeString(),
+        timestamp: request.body.timestamp,
     });
     bluetoothConnection.save()
     .then((data:any) => response.json(data))
