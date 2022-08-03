@@ -1,6 +1,10 @@
 import mongoose from 'mongoose';
 
 const BluetoothConnectionSchema =  new mongoose.Schema({
+    timestamp: {
+        type: Date,
+        default: undefined
+    },
     connectionState: {
         type: String,
         default: undefined,
@@ -43,10 +47,6 @@ const BluetoothConnectionSchema =  new mongoose.Schema({
     },
     deviceModel: {
         type: String,
-        default: undefined
-    }.
-    timestamp: {
-        type: Date,
         default: undefined
     }
 });
