@@ -9,6 +9,10 @@ const BluetoothConnectionSchema =  new mongoose.Schema({
         type: String,
         default: undefined,
     },
+    duringDrive: {
+        type: Boolean,
+        dedault: false
+    },
     journeyId: {
         type: String,
         default: undefined
