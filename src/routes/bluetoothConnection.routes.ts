@@ -16,6 +16,7 @@ bluetoothConnectionRouter.get('/', (request, response) => {
 
 bluetoothConnectionRouter.post('/', (request, response) => {
     const bluetoothConnection = new BluetoothConnection({
+        timestamp: request.body.timestamp,
         connectionState: request.body.connectionState,
         journeyId: request.body.journeyId,
         policyId: request.body.policyId,
@@ -24,7 +25,9 @@ bluetoothConnectionRouter.post('/', (request, response) => {
         btName: request.body.btName,
         recognized: request.body.recognized,
         pairedUUIDS: reqeust.body.pairedUUIDS,
-        timestamp: request.body.timestamp,
+        bluetoothStateOn: request.body.bluetoothStateOn,
+        manufacturer: request.body.manufacturer,
+        deviceModel: reqeust.body.deviceModel
     });
     bluetoothConnection.save()
     .then((data:any) => response.json(data))
