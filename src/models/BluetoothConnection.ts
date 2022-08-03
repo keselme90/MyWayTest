@@ -33,6 +33,18 @@ const BluetoothConnectionSchema =  new mongoose.Schema({
         type: String,
         default: undefined
     },
+    bluetoothStateOn: {
+        type: Boolean,
+        default: false
+    },
+    manufacturer: {
+        type: String,
+        default: undefined
+    },
+    deviceModel: {
+        type: String,
+        default: undefined
+    }.
     timestamp: {
         type: Date,
         default: undefined
