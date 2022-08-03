@@ -30,7 +30,7 @@ const BluetoothConnectionSchema =  new mongoose.Schema({
       default: undefined
     },
     recignized: {
-        type: Boolean.
+        type: Boolean,
         default: false
     },
     pairedUUIDS: {
