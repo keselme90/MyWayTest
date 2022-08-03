@@ -22,6 +22,8 @@ bluetoothConnectionRouter.post('/', (request, response) => {
         driverId: request.body.driverId,
         btUUID: request.body.btUUID,
         btName: request.body.btName,
+        recognized: request.body.recognized,
+        pairedUUIDS: reqeust.body.pairedUUIDS,
         timestamp: request.body.timestamp,
     });
     bluetoothConnection.save()
