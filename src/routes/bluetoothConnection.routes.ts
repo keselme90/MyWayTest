@@ -24,10 +24,10 @@ bluetoothConnectionRouter.post('/', (request, response) => {
         btUUID: request.body.btUUID,
         btName: request.body.btName,
         recognized: request.body.recognized,
-        pairedUUIDS: reqeust.body.pairedUUIDS,
+        pairedUUIDS: request.body.pairedUUIDS,
         bluetoothStateOn: request.body.bluetoothStateOn,
         manufacturer: request.body.manufacturer,
-        deviceModel: reqeust.body.deviceModel
+        deviceModel: request.body.deviceModel
     });
     bluetoothConnection.save()
     .then((data:any) => response.json(data))
