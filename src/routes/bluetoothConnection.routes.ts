@@ -18,6 +18,7 @@ bluetoothConnectionRouter.post('/', (request, response) => {
     const bluetoothConnection = new BluetoothConnection({
         timestamp: request.body.timestamp,
         connectionState: request.body.connectionState,
+        duringDrive: request.body.duringDrive,
         journeyId: request.body.journeyId,
         policyId: request.body.policyId,
         driverId: request.body.driverId,
