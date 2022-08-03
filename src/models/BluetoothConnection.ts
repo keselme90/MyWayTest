@@ -29,7 +29,7 @@ const BluetoothConnectionSchema =  new mongoose.Schema({
       type: String,
       default: undefined
     },
-    recignized: {
+    recognized: {
         type: Boolean,
         default: false
     },
