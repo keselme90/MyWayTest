@@ -27,7 +27,7 @@ easterEggRouter.post('/', (request, response) => {
         isServiceReady: request.body.isServiceReady,
         manufacturer: request.body.manufacturer,
         deviceName: request.body.deviceName,
-        model: request.body.model
+        model: request.body.model,
         osName: request.body.osName,
         osVersion: request.body.osVersion
     });
