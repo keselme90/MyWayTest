@@ -15,5 +15,5 @@ export {
     LocationState,
     IncomingRequest,
     BluetoothPairing,
-    BluetoothConnection,
+    BluetoothConnection
 };
