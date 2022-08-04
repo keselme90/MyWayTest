@@ -1,15 +1,19 @@
-import Journey from "./Journey";
 import Error from "./Error";
+import Journey from "./Journey";
+import EasterEgg from "./EasterEgg";
 import LocationState from "./LocationState";
-import BluetoothConnection from "./BluetoothConnection";
 import IncomingRequest from "./IncomingRequest";
 import BluetoothPairing from "./BluetoothPairing";
+import BluetoothConnection from "./BluetoothConnection";
+
+
 
 export { 
-    Journey,
     Error,
+    Journey,
+    EasterEgg,
     LocationState,
-    BluetoothConnection,
     IncomingRequest,
-    BluetoothPairing
+    BluetoothPairing,
+    BluetoothConnection,
 };
