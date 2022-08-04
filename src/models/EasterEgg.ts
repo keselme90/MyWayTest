@@ -42,7 +42,7 @@ const EasterEggSchema =  new mongoose.Schema({
         default: undefined
     },
     deviceName: {
-        type: Boolean,
+        type: String,
         default: false
     },
     model: {
