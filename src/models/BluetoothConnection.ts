@@ -5,6 +5,10 @@ const BluetoothConnectionSchema =  new mongoose.Schema({
         type: Date,
         default: undefined
     },
+    env: {
+        type: String,
+        default: undefined,
+    },
     connectionState: {
         type: String,
         default: undefined,
@@ -50,6 +54,10 @@ const BluetoothConnectionSchema =  new mongoose.Schema({
         default: undefined
     },
     deviceModel: {
+        type: String,
+        default: undefined
+    },
+    deviceName: {
         type: String,
         default: undefined
     }
