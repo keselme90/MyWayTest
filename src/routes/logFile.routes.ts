@@ -20,7 +20,7 @@ logfileRouter.post('/', (request, response) => {
         response.json("success")
     })
     .catch((e:any) => {
-        console.log('logFileRouter: logFile save error');
+        console.log('logFileRouter: logFile save error', e);
         response.json("error saving log file")
     });
 })
