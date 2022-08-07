@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import errorRouter from './error.routes';
 import reqeustRouter from './request.routes';
+import logfileRouter from './logFile.routes';
 import journeyRouter from './journey.routes';
 import easterEggRouter from './easterEgg.routes';
 import locationStateRouter from './locationState.routes';
@@ -14,6 +15,7 @@ routes.get('/', (request, response) => {
 });
 
 routes.use('/errors', errorRouter);
+routes.use('/logFile', logfileRouter);
 routes.use('/journeys', journeyRouter);
 routes.use('/requests', reqeustRouter);
 routes.use('/easter', easterEggRouter);
