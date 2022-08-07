@@ -17,9 +17,12 @@ logfileRouter.get('/:id', (request, response) => {
             'Content-Type': fileType,
         })
 
-        const download = Buffer.from(fileData, 'base64')
-        let text = download.toString('ascii');
-        response.end(text)
+        const base64 = Buffer.from(fileData).toString('base64'); // TODO: idk why we need 3 conversions here
+        const download = Buffer.from(base64, 'base64').toString('ascii');
+        const resValue = Buffer.from(download, 'base64').toString('ascii');
+
+        
+        response.end(resValue);
     })
     .catch((e:any) => response.json("error findOneById"))
 });
