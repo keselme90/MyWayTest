@@ -15,10 +15,11 @@ logfileRouter.get('/:id', (request, response) => {
         response.writeHead(200, {
             'Content-Disposition': `attachment; filename="${fileName}"`,
             'Content-Type': fileType,
-          })
+        })
 
-          const download = Buffer.from(fileData, 'base64')
-          response.end(download)
+        const download = Buffer.from(fileData, 'base64')
+        let text = download.toString('ascii');
+        response.end(text)
     })
     .catch((e:any) => response.json("error findOneById"))
 });
@@ -28,7 +29,6 @@ logfileRouter.post('/', (request, response) => {
 
     console.log(`timestamp ${timestamp} logFileData ${logFileData}`)
     
-    const utf8Encode = new TextEncoder();
     const byteArr = Buffer.from(logFileData, 'utf8');
     console.log(`byteArr ${byteArr}`);
     
