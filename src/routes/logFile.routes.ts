@@ -15,8 +15,14 @@ logfileRouter.post('/', (request, response) => {
     });
 
     logFile.save()
-    .then((data:any) => response.json("success"))
-    .catch((e:any) => response.json("error saving log file"));
+    .then((data:any) => {
+        console.log('logFileRouter: logFile save success');
+        response.json("success")
+    })
+    .catch((e:any) => {
+        console.log('logFileRouter: logFile save error');
+        response.json("error saving log file")
+    });
 })
 
 export default logfileRouter;
