@@ -28,7 +28,7 @@ logfileRouter.get('/:id', (request, response) => {
 });
 
 logfileRouter.post('/', (request, response) => {
-    const { timestamp, logFileData, type } = request.body;
+    const { timestamp, logFileData } = request.body;
 
     console.log(`timestamp ${timestamp} logFileData ${logFileData}`)
     
@@ -38,13 +38,12 @@ logfileRouter.post('/', (request, response) => {
     const logFile = new LogFile({
         date: timestamp,
         data: byteArr,
-        type
     });
 
     logFile.save()
     .then((data:any) => {
         console.log('logFileRouter: logFile save success');
-        response.json("success")
+        response.json({result: "success", id:data.id})
     })
     .catch((e:any) => {
         console.log('logFileRouter: logFile save error', e);
