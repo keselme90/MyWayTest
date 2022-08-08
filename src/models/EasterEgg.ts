@@ -56,6 +56,10 @@ const EasterEggSchema =  new mongoose.Schema({
     osVersion: {
         type: String,
         default: undefined
+    },
+    logFileId: {
+        type: String,
+        default: undefined
     }
 });
 

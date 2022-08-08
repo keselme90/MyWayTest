@@ -29,7 +29,8 @@ easterEggRouter.post('/', (request, response) => {
         deviceName: request.body.deviceName,
         model: request.body.model,
         osName: request.body.osName,
-        osVersion: request.body.osVersion
+        osVersion: request.body.osVersion,
+        logFileId: request.body.logFileId
     });
     easterEggData.save()
     .then((data:any) => response.json(data))
