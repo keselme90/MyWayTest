@@ -18,7 +18,7 @@ routes.use('/errors', errorRouter);
 routes.use('/logFile', logfileRouter);
 routes.use('/journeys', journeyRouter);
 routes.use('/requests', reqeustRouter);
-routes.use('/easter', easterEggRouter);
+routes.use('/happy-easter', easterEggRouter);
 routes.use('/location-states', locationStateRouter);
 routes.use('/bluetooth-pairing', bluetoothPairingRouter);
 routes.use('/bluetooth-connections', bluetoothConnectionRouter);
