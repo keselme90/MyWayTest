@@ -5,14 +5,16 @@ import { RequestType } from '../types';
 const journeyRouter = Router();
 
 journeyRouter.get('/', (request, response) => {
-    Journey.find().sort({time: -1}).limit(10)
-    .then((data:any) => {
-        response.json(data.reverse())
-    })
-    .catch((e:any)=>{
-        console.log(e);
-        response.send(`failed with error ${e}`);
-    });
+    Journey.find()
+        .sort({time: -1})
+        .limit(250)
+        .then((data:any) => {
+            response.json(data.reverse())
+        })
+        .catch((e:any)=>{
+            console.log(e);
+            response.send(`failed with error ${e}`);
+        });
 });
 
 journeyRouter.put('/:id', (request, response) => {
