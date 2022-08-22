@@ -9,7 +9,7 @@ journeyRouter.get('/', (request, response) => {
         .sort({time: -1})
         .limit(500)
         .then((data:any) => {
-            response.json(data.reverse())
+            response.json(data)
         })
         .catch((e:any)=>{
             console.log(e);
