@@ -5,7 +5,7 @@ import { RequestType } from '../types';
 const journeyRouter = Router();
 
 journeyRouter.get('/', (request, response) => {
-    Journey.find()
+    Journey.find().sort({time: -1}).limit(10)
     .then((data:any) => {
         response.json(data.reverse())
     })
