@@ -7,7 +7,7 @@ const journeyRouter = Router();
 journeyRouter.get('/', (request, response) => {
     Journey.find()
         .sort({time: -1})
-        .limit(250)
+        .limit(500)
         .then((data:any) => {
             response.json(data.reverse())
         })
