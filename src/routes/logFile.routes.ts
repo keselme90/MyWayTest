@@ -8,7 +8,8 @@ logfileRouter.get('/:id', (request, response) => {
     const { id } = request.params;
     LogFile.findById(id)
     .then((item) => {
-        const {data: fileData} = item;
+        const {data: fileData, zip} = item;
+        if(!zip) {
         const fileName = `log_${id}.txt`
         const fileType = 'text/plain'
 
@@ -23,6 +24,17 @@ logfileRouter.get('/:id', (request, response) => {
 
         
         response.end(resValue);
+        } else {
+            const fileName = `zip_${id}.zip`
+            const fileType = 'application/zip'
+            
+            response.writeHead(200, {
+                'Content-Disposition': `attachment; filename="${fileName}"`,
+                'Content-Type': fileType,
+            })
+            
+            const buffer = Buffer.from(fileData, 'base64');
+        }
     })
     .catch((e:any) => response.json("error findOneById"))
 });
