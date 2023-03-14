@@ -34,6 +34,7 @@ logfileRouter.get('/:id', (request, response) => {
             })
             
             const buffer = Buffer.from(fileData, 'base64');
+            response.end(buffer);
         }
     })
     .catch((e:any) => response.json("error findOneById"))
