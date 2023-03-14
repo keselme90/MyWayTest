@@ -28,7 +28,7 @@ logfileRouter.get('/:id', (request, response) => {
 });
 
 logfileRouter.post('/', (request, response) => {
-    const { timestamp, logFileData } = request.body;
+    const { timestamp, logFileData, zip } = request.body;
 
     console.log(`timestamp ${timestamp} logFileData ${logFileData}`)
     
@@ -38,6 +38,7 @@ logfileRouter.post('/', (request, response) => {
     const logFile = new LogFile({
         date: timestamp,
         data: byteArr,
+        zip
     });
 
     logFile.save()
