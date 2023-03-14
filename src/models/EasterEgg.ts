@@ -60,6 +60,10 @@ const EasterEggSchema =  new mongoose.Schema({
     logFileId: {
         type: String,
         default: undefined
+    },
+    floZipId: {
+        type: String,
+        default: undefined
     }
 });
 
